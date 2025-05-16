@@ -1,0 +1,7 @@
+dagster 
+duckdb 
+dagster-dbt 
+dbt-duckdb
+plotly 
+pandas
+psycopg2-binary 
