@@ -1,6 +1,7 @@
 dagster 
 duckdb 
-dagster-dbt 
+dagster-dbt
+dbt-bigquery 
 dbt-duckdb
 plotly 
 pandas

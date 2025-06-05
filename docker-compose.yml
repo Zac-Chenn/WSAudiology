@@ -9,10 +9,18 @@ services:
       - "./data/postgres_data:/var/lib/postgresql/data:rw"
     ports:
       - "5431:5432"
+    networks:
+      - kind
   pgadmin:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - "8080:80" 
+      - "8080:80"
+    networks:
+      - kind 
+
+networks: # Define the networks at the top level
+  kind:
+    external: true 

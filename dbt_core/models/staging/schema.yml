@@ -1,0 +1,23 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: wsaudiology-462008
+    schema: staging
+    tables:
+      - name: departments_ext
+      - name: events
+      - name: jobs
+      - name: locations
+      - name: requisitions
+
+models:
+  - name: stg_jobs
+    description: "Table consist of informations on all global jobs"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
