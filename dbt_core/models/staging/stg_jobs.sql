@@ -23,6 +23,5 @@ from
     -- JSON_QUERY_ARRAY = returns a BigQuery ARRAY<JSON> data type
     -- UNNEST = flatten array into set of rows
     UNNEST(JSON_QUERY_ARRAY(j.location_ids, '$')) AS location_id_str
-limit 
-    100
+
 
