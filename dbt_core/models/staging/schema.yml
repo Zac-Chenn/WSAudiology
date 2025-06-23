@@ -14,11 +14,51 @@ sources:
       - name: company
 
 models:
-  - name: stg_jobs
-    description: "Table consist of informations on all global jobs"
+  - name: stg_company
+    description: "Dimension Table: consisting of all global WSA entities"
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: "Unique entities id"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_events
+    description: "Facts Table: Logs on every candidate & recruiter actions"
+    columns:
+      - name: id
+        description: "Unique events id"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_jobs
+    description: "Facts Table: Informations on all global jobs"
+    columns:
+      - name: id
+        description: "Unique job id"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_locations
+    description: "Dimension Table: hiring locations"
+    columns:
+      - name: id
+        description: "Unique hiring location id"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_requisitions
+    description: "Facts Table: Information on global requisitions"
+    columns:
+      - name: id
+        description: "Unique requisitions id"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_departments
+    description: "Dimension Table: departments"
+    columns:
+      - name: id
+        description: "Unique departments id"
         data_tests:
           - unique
           - not_null
