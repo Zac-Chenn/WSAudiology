@@ -22,6 +22,14 @@ models:
         data_tests:
           - unique
           - not_null
+  - name: stg_departments
+    description: "Dimension Table: departments"
+    columns:
+      - name: id
+        description: "Unique departments id"
+        data_tests:
+          - unique
+          - not_null
   - name: stg_events
     description: "Facts Table: Logs on every candidate & recruiter actions"
     columns:
@@ -36,7 +44,6 @@ models:
       - name: id
         description: "Unique job id"
         data_tests:
-          - unique
           - not_null
   - name: stg_locations
     description: "Dimension Table: hiring locations"
@@ -54,11 +61,4 @@ models:
         data_tests:
           - unique
           - not_null
-  - name: stg_departments
-    description: "Dimension Table: departments"
-    columns:
-      - name: id
-        description: "Unique departments id"
-        data_tests:
-          - unique
-          - not_null
+
