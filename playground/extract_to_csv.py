@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+
 def connect_to_postgres():
     """
     Establishes a connection to a PostgreSQL database using psycopg2,
@@ -24,7 +25,9 @@ def connect_to_postgres():
 
     if None in (host, database, user, password):
         print("Error: Required environment variables are not set.")
-        print("Please set POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, and POSTGRES_PASSWORD.")
+        print(
+            "Please set POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, and POSTGRES_PASSWORD."
+        )
         return None
 
     try:
@@ -37,20 +40,21 @@ def connect_to_postgres():
             password=password,
         )
         return conn
-    
+
     except psycopg2.Error as e:
         print(f"Error connecting to PostgreSQL: {e}")
         return False
+
 
 if __name__ == "__main__":
     conn = connect_to_postgres()
 
     with conn.cursor() as cursor:
-        query = '''
+        query = """
             SELECT * 
             FROM pg_catalog.pg_tables
             WHERE schemaname = 'public';
-        '''
+        """
         cursor.execute(query)
         table_names_tuple = cursor.fetchall()
 
@@ -61,18 +65,17 @@ if __name__ == "__main__":
             cursor.execute(select_query)
             table_data = cursor.fetchall()
 
-            with open(f"data/recruitment_data/{table_name}.csv", "w", newline="") as file:
+            with open(
+                f"data/recruitment_data/{table_name}.csv", "w", newline=""
+            ) as file:
                 writer = csv.writer(file)
                 writer.writerow([col[0] for col in cursor.description])
                 writer.writerows(table_data)
 
             print(f"{table_name}.csv has been created")
-        
+
         print("Table downloads has been completed")
-    
+
     # close the cursor and connection
     cursor.close()
     conn.close()
-    
-
-

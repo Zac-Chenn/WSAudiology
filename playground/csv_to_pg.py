@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+
 def initiate_engine():
     """
     Establishes a connection to a PostgreSQL database using credentials from
@@ -21,14 +22,16 @@ def initiate_engine():
     user = os.environ.get("LOCAL_PG_USER")
     password = os.environ.get("LOCAL_PG_PASSWORD")
 
-    engine = sqlalchemy.create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
+    engine = sqlalchemy.create_engine(
+        f"postgresql://{user}:{password}@{host}:{port}/{database}"
+    )
     return engine
 
 
 if __name__ == "__main__":
-    folder_path = "data/recruitment_data" 
-    csv_files = glob.glob(os.path.join(folder_path, '*.csv'))
-    csv_file = 'data/recruitment_data/answers.csv'
+    folder_path = "data/recruitment_data"
+    csv_files = glob.glob(os.path.join(folder_path, "*.csv"))
+    csv_file = "data/recruitment_data/answers.csv"
     engine = initiate_engine()
 
     if not csv_files:
@@ -41,14 +44,5 @@ if __name__ == "__main__":
         # Create & Insert CSV into PostgreSQL
         print(f"Begin process for creating {table_name} table")
         df = pd.read_csv(csv_file)
-        df.to_sql(name=table_name, con=engine, if_exists='replace')
+        df.to_sql(name=table_name, con=engine, if_exists="replace")
         print(f"Table {table_name} has been created")
-
-
-
-
-
-
-        
-
-
