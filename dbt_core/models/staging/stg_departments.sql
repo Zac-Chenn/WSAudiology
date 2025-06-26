@@ -8,4 +8,4 @@ select
     CAST(name as STRING) as name,
     CAST(company_id as INT) as company_id
 from
-    {{ source('staging', 'departments_ext') }}
+    {{ source('staging', 'departments') }}

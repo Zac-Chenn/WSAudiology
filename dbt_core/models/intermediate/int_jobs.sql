@@ -35,6 +35,6 @@ left join
     ON j.department_id = d.id 
 
 left join
-    {{ ref("stg_company") }} as c
+    {{ ref("stg_companies") }} as c
     ON j.company_id = c.id
 
