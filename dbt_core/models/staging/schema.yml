@@ -6,15 +6,15 @@ sources:
     database: wsaudiology-462008
     schema: staging
     tables:
-      - name: departments_ext
+      - name: departments
       - name: events
       - name: jobs
       - name: locations
       - name: requisitions
-      - name: company
+      - name: companies
 
 models:
-  - name: stg_company
+  - name: stg_companies
     description: "Dimension Table: consisting of all global WSA entities"
     columns:
       - name: id

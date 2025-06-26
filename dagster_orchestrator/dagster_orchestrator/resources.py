@@ -28,7 +28,7 @@ dbt_core_project = DbtProject(
     project_dir=Path(__file__).joinpath("..", "..", "..", "dbt_core").resolve(),
     packaged_project_dir=Path(__file__).joinpath("..", "..", "dbt-project").resolve(),
 
-    # add path to dbt profile.yml
+    # add path to dbt profile.yml in home dir
     profiles_dir=str(Path(os.path.expanduser("~/.dbt"))),
 )
 dbt_core_project.prepare_if_dev()
