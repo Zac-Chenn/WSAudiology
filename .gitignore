@@ -1,4 +1,4 @@
-/.env
+.env
 .venv/
 data/recruitment_data
 data/postgres_data
