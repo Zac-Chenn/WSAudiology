@@ -30,6 +30,7 @@ To address this, the present project aims to establish a robust data pipeline th
     - [Candidate Experience](#candidate-experience)
 
 ## Tech Stack
+<div style="display: flex; flex-wrap: wrap; gap: 5px;">
 <img height="32" width="32" src="https://cdn.simpleicons.org/python" />
 <img height="32" width="32" src="https://cdn.simpleicons.org/docker" /> 
 <img height="32" width="32" src="https://cdn.simpleicons.org/googlecloud" /> 
@@ -38,7 +39,7 @@ To address this, the present project aims to establish a robust data pipeline th
 <img height="32" width="32" src="https://cdn.simpleicons.org/terraform" /> 
 <img height="32" width="32" src="https://cdn.simpleicons.org/dbt" /> 
 <img height="32" width="32" src="https://cdn.prod.website-files.com/605e01bc25f7e19a82e74788/624d9c4a092d197522e0ef75_Airbyte_icon_color.svg" /> 
-<img height="32" width="32" src="https://cdn.prod.website-files.com/605e01bc25f7e19a82e74788/624d9c4a092d197522e0ef75_Airbyte_icon_color.svg" /> 
+</div>
 
 ---
 - **Containerization Platform:** Docker  
